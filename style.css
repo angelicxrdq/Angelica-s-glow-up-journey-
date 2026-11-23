@@ -377,4 +377,269 @@ button:active {
         padding: 35px 22px;
     }
 
+/* ==========================================
+   CHAPTER WINDOWS
+   Blue Fairytale Edition
+========================================== */
+
+.chapter-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px;
+
+    background: rgba(175, 205, 232, 0.48);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .4s ease, visibility .4s ease;
+}
+
+.chapter-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* WINDOW */
+
+.chapter-window {
+    position: relative;
+
+    width: 100%;
+    max-width: 620px;
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 35px 24px;
+
+    background:
+        radial-gradient(circle at top, white, transparent 65%),
+        linear-gradient(145deg, #fafdff, #eaf5ff);
+
+    border: 1.5px solid #d5b779;
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 70px rgba(105, 151, 193, .25),
+        inset 0 0 25px rgba(255,255,255,.8);
+
+    transform: translateY(25px) scale(.96);
+    transition: transform .45s ease;
+}
+
+.chapter-overlay.visible .chapter-window {
+    transform: translateY(0) scale(1);
+}
+
+/* CLOSE BUTTON */
+
+.chapter-close {
+    position: sticky;
+    top: 0;
+    float: right;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #d9c28f;
+    border-radius: 50%;
+
+    background: #f5faff;
+    color: #8baed0;
+
+    font-size: 26px;
+    line-height: 1;
+
+    z-index: 5;
+}
+
+.chapter-close:hover {
+    background: #dfedfa;
+}
+
+/* CHAPTER HEADER */
+
+.chapter-icon {
+    text-align: center;
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.chapter-window h2 {
+    text-align: center;
+
+    color: #86afd4;
+
+    font-family: 'Parisienne', cursive;
+    font-size: 42px;
+    font-weight: normal;
+
+    margin: 10px 0;
+}
+
+.chapter-subtitle {
+    text-align: center;
+
+    color: #bda46c;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.chapter-description {
+    text-align: center;
+
+    max-width: 430px;
+    margin: 20px auto;
+
+    color: #8296aa;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+/* DECORATIVE DIVIDER */
+
+.chapter-description::after {
+    content: "✧ ── ♡ ── ✧";
+
+    display: block;
+    margin: 22px 0;
+
+    color: #d3b779;
+    letter-spacing: 4px;
+}
+
+/* CONTENT */
+
+.chapter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* PEARL CARDS */
+
+.chapter-card {
+    padding: 20px;
+
+    background:
+        linear-gradient(145deg, #ffffff, #f0f8ff);
+
+    border: 1px solid #dce8f5;
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 16px rgba(145, 183, 218, .12);
+
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.chapter-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 22px rgba(145, 183, 218, .2);
+}
+
+.chapter-card h3 {
+    color: #8eafd0;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.chapter-card p {
+    color: #8295a8;
+
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+/* BACK BUTTON */
+
+.chapter-back {
+    display: block;
+
+    margin: 28px auto 5px;
+
+    padding: 12px 25px;
+
+    border: 1px solid #d5b779;
+    border-radius: 35px;
+
+    background: linear-gradient(135deg, #c9e2f7, #a6c9e9);
+
+    color: white;
+
+    font-size: 19px;
+
+    box-shadow: 0 5px 15px #a5c6e544;
+}
+
+.chapter-back:hover {
+    background: linear-gradient(135deg, #d9edff, #b1d3ef);
+}
+
+/* SCROLLBAR */
+
+.chapter-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chapter-window::-webkit-scrollbar-thumb {
+    background: #c8dff2;
+    border-radius: 10px;
+}
+
+.chapter-window::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .chapter-overlay {
+        padding: 12px;
+    }
+
+    .chapter-window {
+        padding: 27px 17px;
+        max-height: 90vh;
+        border-radius: 20px;
+    }
+
+    .chapter-window h2 {
+        font-size: 36px;
+    }
+
+    .chapter-description {
+        font-size: 17px;
+    }
+
+    .chapter-card {
+        padding: 17px;
+    }
+
+    .chapter-card h3 {
+        font-size: 22px;
+    }
+
+    .chapter-card p {
+        font-size: 17px;
+    }
+
+}
+
+
 }
