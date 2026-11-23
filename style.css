@@ -641,5 +641,74 @@ button:active {
 
 }
 
+/* ==========================================
+   VANITY ROOM INTERACTIVE ELEMENTS
+========================================== */
+
+.vanity-door {
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    color: #789bbd;
+}
+
+.vanity-door h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+}
+
+.vanity-open {
+    display: block;
+    text-align: right;
+    color: #c3a467;
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.favorite-button {
+    margin-top: 12px;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #e5f2ff, #c6def4);
+    color: #799fc5;
+    border: 1px solid #d8c18f;
+    border-radius: 30px;
+    font-size: 17px;
+}
+
+.beauty-notes {
+    display: block;
+    width: 100%;
+    min-height: 140px;
+    resize: vertical;
+    margin: 15px 0;
+    padding: 15px;
+
+    border: 1px solid #d6e5f3;
+    border-radius: 15px;
+
+    background: #fbfdff;
+    color: #7289a0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.6;
+
+    outline: none;
+}
+
+.beauty-notes:focus {
+    border-color: #a8c9e8;
+    box-shadow: 0 0 12px #b8d7f555;
+}
+
+.beauty-save-message {
+    color: #94b7d5;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
 
 }
