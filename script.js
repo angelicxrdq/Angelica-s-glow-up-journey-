@@ -343,3 +343,4 @@ function returnToCover() {
 }
 
 console.log("Angélica's Glow Up Journey is ready ♡");
+
