@@ -1,0 +1,380 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap');
+
+:root {
+    --sky: #dceeff;
+    --blue: #a8c9e8;
+    --blue-dark: #789fc5;
+    --blue-soft: #eff7ff;
+    --white: #fffdfd;
+    --gold: #d5b779;
+    --text: #71869d;
+    --pink: #f1dce9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text);
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(ellipse at 15% 15%, #ffffff 0%, transparent 35%),
+        radial-gradient(ellipse at 85% 80%, #edf5ff 0%, transparent 40%),
+        linear-gradient(135deg, #e9f5ff, #c9e2f7, #dceafa);
+}
+
+/* =========================
+   FONDO MÁGICO
+========================= */
+
+body::before {
+    content: "✧      ❀      ✦      ❀      ✧";
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 12px;
+    opacity: .8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "♡  ✧  ♡";
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    letter-spacing: 10px;
+    font-size: 22px;
+    opacity: .75;
+    pointer-events: none;
+    z-index: 0;
+}
+
+button {
+    font-family: 'Cormorant Garamond', serif;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+/* =========================
+   PORTADA DEL LIBRO
+========================= */
+
+.cover {
+    position: relative;
+    width: min(440px, 100%);
+    padding: 48px 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(145deg, #ffffff, #f1f8ff);
+
+    border: 2px solid var(--gold);
+    border-radius: 8px 25px 25px 8px;
+
+    box-shadow:
+        10px 10px 0 #bcd7ed,
+        0 25px 55px #83afd455;
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+
+    border: 1px solid #e7d5a9;
+    border-radius: 5px 18px 18px 5px;
+
+    pointer-events: none;
+}
+
+.cover-decoration {
+    color: var(--gold);
+    font-size: 24px;
+    letter-spacing: 7px;
+}
+
+.cover h1 {
+    margin-top: 20px;
+    font-size: clamp(34px, 8vw, 48px);
+    line-height: 1.05;
+    letter-spacing: 3px;
+    color: #8cb4d9;
+    font-weight: 600;
+}
+
+.cover h2 {
+    margin-top: 14px;
+    font-size: 40px;
+    font-family: 'Parisienne', cursive;
+    color: #c5a361;
+    font-weight: normal;
+}
+
+.cover p {
+    max-width: 300px;
+    margin: 18px auto;
+    color: #8297ac;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.book-symbol {
+    margin: 24px 0;
+    font-size: 65px;
+    animation: floating 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 8px #8eb7d655);
+}
+
+/* BOTÓN DE PORTADA */
+
+.main-button {
+    position: relative;
+    padding: 13px 30px;
+    margin-top: 15px;
+
+    color: white;
+    font-size: 19px;
+
+    border: 1px solid var(--gold);
+    border-radius: 40px;
+
+    background: linear-gradient(135deg, #bddcf5, #91bce3);
+
+    box-shadow: 0 5px 16px #93b9d655;
+}
+
+.main-button:hover {
+    background: linear-gradient(135deg, #cce5fa, #9bc7eb);
+    box-shadow: 0 8px 24px #8bb8dd88;
+}
+
+/* =========================
+   CARTA DE BIENVENIDA
+========================= */
+
+.letter {
+    position: relative;
+    width: min(480px, 100%);
+    padding: 42px 28px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(145deg, #fffefd, #f5faff);
+
+    border: 1px solid #d9bf88;
+
+    box-shadow:
+        0 20px 55px #86afd355,
+        inset 0 0 25px #dceeff55;
+
+    animation: appear .8s ease;
+}
+
+.letter h1 {
+    color: #8bb4d9;
+    font-size: 38px;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.letter p {
+    font-size: 21px;
+    line-height: 1.8;
+    margin: 17px 0;
+    color: #7b8ea3;
+}
+
+.signature {
+    font-family: 'Parisienne', cursive;
+    color: #c4a262 !important;
+    font-size: 30px !important;
+}
+
+/* =========================
+   HABITACIÓN PRINCIPAL
+========================= */
+
+.room {
+    position: relative;
+    width: min(900px, 100%);
+    min-height: 570px;
+    padding: 38px 22px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at top, #ffffff, transparent 65%),
+        linear-gradient(145deg, #f9fdff, #e5f3ff);
+
+    border: 2px solid #d7bd87;
+    border-radius: 15px;
+
+    box-shadow:
+        0 25px 60px #88b5d955,
+        inset 0 0 30px #ffffff;
+
+    animation: appear 1s ease;
+}
+
+.room-title {
+    margin: 10px 0;
+    font-family: 'Parisienne', cursive;
+    font-weight: normal;
+    font-size: clamp(34px, 7vw, 48px);
+    color: #84add3;
+}
+
+.room-subtitle {
+    font-size: 21px;
+    color: #94a9bc;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+
+    max-width: 650px;
+    margin: 35px auto;
+}
+
+.door {
+    min-height: 140px;
+    padding: 18px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid #d8c28f;
+    border-radius: 18px;
+
+    color: #789bbd;
+
+    background:
+        linear-gradient(145deg, #ffffff, #e8f4ff);
+
+    box-shadow: 0 8px 20px #9dbfdf33;
+}
+
+.door:hover {
+    background: linear-gradient(145deg, #fafdff, #d8ecff);
+    box-shadow: 0 12px 25px #91b8dc66;
+}
+
+.door span {
+    font-size: 36px;
+}
+
+.door strong {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+
+    .cover {
+        padding: 42px 22px;
+    }
+
+    .cover h1 {
+        letter-spacing: 2px;
+    }
+
+    .cover h2 {
+        font-size: 35px;
+    }
+
+    .room {
+        padding: 28px 14px;
+    }
+
+    .room-grid {
+        gap: 12px;
+    }
+
+    .door {
+        min-height: 120px;
+    }
+
+    .letter {
+        padding: 35px 22px;
+    }
+
+}
