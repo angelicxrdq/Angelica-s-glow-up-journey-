@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angélica's Glow Up Journey</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: #526c89;
+    font-family: 'Cormorant Garamond', serif;
+    background:
+        radial-gradient(circle at 50% 15%, #ffffff 0%, transparent 40%),
+        linear-gradient(180deg, #eaf6ff, #c5e0f5, #dceafa);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "✧  ·  ✦  ·  ❀  ·  ✦  ·  ✧";
+    position: fixed;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: .8;
+    letter-spacing: 12px;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+body::after {
+    content: "✧  ❀  ✧";
+    position: fixed;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    opacity: .7;
+    font-size: 25px;
+    pointer-events: none;
+}
+
+.screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 18px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* PORTADA */
+
+.cover {
+    position: relative;
+    width: min(440px, 100%);
+    padding: 55px 28px;
+    text-align: center;
+    background: linear-gradient(145deg, #fdfefe, #eaf5ff);
+    border: 2px solid #d8bd83;
+    border-radius: 8px 25px 25px 8px;
+    box-shadow:
+        12px 12px 0 #bdd7ed,
+        0 25px 60px #8eb9dc55;
+    animation: floating 4s ease-in-out infinite;
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid #e7d5a9;
+    border-radius: 5px 18px 18px 5px;
+    pointer-events: none;
+}
+
+.cover-decoration {
+    color: #d4b16b;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+.cover h1 {
+    margin: 22px 0 5px;
+    color: #85acd4;
+    font-size: clamp(34px, 8vw, 45px);
+    line-height: 1.1;
+    letter-spacing: 3px;
+}
+
+.cover h2 {
+    margin: 12px 0;
+    font-family: 'Parisienne', cursive;
+    color: #c7a35f;
+    font-size: 38px;
+    font-weight: normal;
+}
+
+.cover p {
+    max-width: 280px;
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #7f93a8;
+}
+
+.book-symbol {
+    margin: 25px auto;
+    font-size: 70px;
+    filter: drop-shadow(0 8px 10px #9bbbd755);
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* BOTONES */
+
+button {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: #fff;
+    padding: 13px 28px;
+    border: 1px solid #d7b96f;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #b8d8f4, #8eb9df);
+    box-shadow: 0 5px 15px #9bbbd755;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px #9bbbd777;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+/* CARTA */
+
+.letter {
+    position: relative;
+    width: min(480px, 100%);
+    padding: 42px 28px;
+    text-align: center;
+    background: #fffdf9;
+    border: 1px solid #d8bd83;
+    box-shadow: 0 20px 60px #83afd455;
+    animation: fadeIn .8s ease;
+}
+
+.letter::before {
+    content: "❀";
+    display: block;
+    color: #b6cfe8;
+    font-size: 30px;
+}
+
+.letter h1 {
+    color: #85afd5;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.letter p {
+    font-size: 21px;
+    line-height: 1.8;
+    color: #788ba0;
+}
+
+.signature {
+    font-family: 'Parisienne', cursive;
+    font-size: 30px !important;
+    color: #c4a261 !important;
+}
+
+/* HABITACIÓN */
+
+.room {
+    width: min(850px, 100%);
+    min-height: 580px;
+    padding: 35px 22px;
+    text-align: center;
+    border: 2px solid #d7bd89;
+    border-radius: 12px;
+    background:
+        linear-gradient(#ffffffa8, #eff8ffb8),
+        #e5f2ff;
+    box-shadow: 0 20px 60px #8cb7d855;
+    animation: fadeIn 1s ease;
+}
+
+.room-title {
+    font-family: 'Parisienne', cursive;
+    font-size: 46px;
+    color: #82acd2;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.room-subtitle {
+    font-size: 20px;
+    color: #849bb2;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 35px auto;
+    max-width: 600px;
+}
+
+.door {
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #d8c18d;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #e5f3ff);
+    box-shadow: 0 7px 18px #9bbbd733;
+    color: #7799ba;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.door:hover {
+    transform: translateY(-5px);
+    background: #d9edff;
+}
+
+.door span {
+    font-size: 35px;
+}
+
+.door strong {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+/* ANIMACIONES */
+
+@keyframes floating {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    .cover {
+        padding: 45px 23px;
+    }
+
+    .room-title {
+        font-size: 38px;
+    }
+
+    .room {
+        padding: 28px 14px;
+    }
+
+    .door {
+        min-height: 115px;
+    }
+
+    .room-grid {
+        gap: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<section class="screen" id="coverScreen">
+    <div class="cover">
+
+        <div class="cover-decoration">✧ ♡ ✧</div>
+
+        <h1>GLOW UP<br>JOURNEY</h1>
+
+        <h2>Angélica's Edition</h2>
+
+        <div class="book-symbol">📖</div>
+
+        <p>
+            A little diary of growth,
+            beauty and becoming
+        </p>
+
+        <div class="cover-decoration">❀ ୨ৎ ❀</div>
+
+        <button onclick="openStory()">
+            ✧ Open my story ✧
+        </button>
+
+    </div>
+</section>
+
+
+<!-- CARTA -->
+
+<section class="screen hidden" id="letterScreen">
+    <div class="letter">
+
+        <h1>Dear Angélica ♡</h1>
+
+        <p>
+            Cada historia comienza con un pequeño deseo.
+        </p>
+
+        <p>
+            Este libro no pretende convertirte en alguien diferente.
+            Es un lugar para descubrirte, cuidarte, aprender,
+            crear sueños y disfrutar de cada pequeño paso.
+        </p>
+
+        <p>
+            Aquí no necesitas ser perfecta.
+            Puedes crecer a tu propio ritmo,
+            cambiar de ideas, comenzar de nuevo
+            y convertir tus sueños en pequeños proyectos.
+        </p>
+
+        <p>
+            Esta historia te pertenece.
+        </p>
+
+        <p class="signature">
+            Welcome to your journey ♡
+        </p>
+
+        <button onclick="enterWorld()">
+            Enter my world ✧
+        </button>
+
+    </div>
+</section>
+
+
+<!-- MUNDO PRINCIPAL -->
+
+<section class="screen hidden" id="roomScreen">
+    <div class="room">
+
+        <div class="cover-decoration">✧ ❀ ✧</div>
+
+        <h1 class="room-title">
+            Angélica's Little World
+        </h1>
+
+        <p class="room-subtitle">
+            Choose a chapter of your story ♡
+        </p>
+
+        <div class="room-grid">
+
+            <button class="door" onclick="showChapter('Vanity Room')">
+                <span>🪞</span>
+                <strong>Vanity Room</strong>
+            </button>
+
+            <button class="door" onclick="showChapter('Closet Room')">
+                <span>🎀</span>
+                <strong>Closet Room</strong>
+            </button>
+
+            <button class="door" onclick="showChapter('Journal Room')">
+                <span>📖</span>
+                <strong>Journal Room</strong>
+            </button>
+
+            <button class="door" onclick="showChapter('Garden of Growth')">
+                <span>🌷</span>
+                <strong>Garden of Growth</strong>
+            </button>
+
+        </div>
+
+        <div class="cover-decoration">
+            ✦ A new chapter begins ✦
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+
+function openStory() {
+    document.getElementById("coverScreen").classList.add("hidden");
+    document.getElementById("letterScreen").classList.remove("hidden");
+}
+
+function enterWorld() {
+    document.getElementById("letterScreen").classList.add("hidden");
+    document.getElementById("roomScreen").classList.remove("hidden");
+}
+
+function showChapter(chapter) {
+    alert("Welcome to " + chapter + " ♡\n\nThis magical chapter is coming soon!");
+}
+
+</script>
+
+</body>
+</html>
